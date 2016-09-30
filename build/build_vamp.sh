@@ -15,8 +15,11 @@ fi
 
 if [ $# -eq 1 -a "$1" = "run" ]
 then
-   docker run -i -t --rm -v `pwd`:/build -w /build --entrypoint /build/build_vamp.sh centos:7 build
-   exit
+    docker run -i -t --rm -v `pwd`:/build -w /build --entrypoint /build/build_vamp.sh centos:7 build
+
+    mv vamp/vamp.jar ./
+
+    exit
 fi
 
 if [ $# -eq 1 -a "$1" = "build" ]

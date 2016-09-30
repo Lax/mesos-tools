@@ -16,6 +16,9 @@ fi
 if [ $# -eq 1 -a "$1" = "run" ]
 then
     docker run -i -t --rm -v $(pwd):/build -w /build --entrypoint /build/build_vamp_ui.sh node:6 build
+
+    mv vamp-ui/ui.tar.bz2 ./
+
     exit
 fi
 
